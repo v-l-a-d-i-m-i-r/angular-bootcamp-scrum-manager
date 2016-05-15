@@ -1,0 +1,16 @@
+{
+  "name": "scrum-manager-server",
+  "description": "Backend server for scrum management tool",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": { "start" : "node index.js" },
+  "dependencies": {
+    "express": "~3.0",
+    "express-namespace": "~0.1.1",
+    "open": "0.0.3",
+    "passport": "~0.1.12",
+    "passport-local": "~0.1.6",
+    "request": "~2.16.6",
+    "uuid": "^2.0.2"
+  }
+}
