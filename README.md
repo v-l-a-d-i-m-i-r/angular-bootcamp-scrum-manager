@@ -2,7 +2,7 @@
 
 First of all copy `config.js.dist` to `config.js` file
 
-`cp ./server/config.js.dist ./config.js`
+`cp ./server/config.js.dist ./server/config.js`
 
 To set up this application you should go to [MongoLab](https://mlab.com/) sign up a new account
 and create a new free tier database with the name `scrum`. Then go to [Account users page](https://mlab.com/account-details/) choose your user
