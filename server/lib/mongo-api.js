@@ -1,4 +1,3 @@
-// code for initializing the DB w/ an admin user
 var request = require('request');
 
 var mongoApi = {
@@ -13,7 +12,6 @@ var mongoApi = {
   _checkDocument: function(collection, query, done) {
     var url = mongoApi.baseUrl + collection + '/';
     var params = { apiKey: mongoApi.apiKey, q: JSON.stringify(query) };
-
     console.log("request.get - " + url);
 
     request.get(url, { qs: params, json: {} }, function(err, response, data) {
@@ -27,6 +25,7 @@ var mongoApi = {
   _createDocument: function(collection, doc, done) {
     var url = mongoApi.baseUrl + collection + '/';
     console.log("request.post - " + url);
+
     request.post(url, { qs: { apiKey: mongoApi.apiKey }, json: doc }, function(err, response, data) {
       if ( !err ) {
         console.log('Document created', data);
@@ -38,6 +37,7 @@ var mongoApi = {
   _deleteDocument: function(collection, $oid, done) {
     var url = mongoApi.baseUrl + collection + '/' + $oid;
     console.log("request.delete - " + url);
+
     request.del(url, { qs: { apiKey:mongoApi.apiKey }, json: {} }, function(err, response, data) {
       if ( !err ) {
         console.log('Document deleted', data);
