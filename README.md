@@ -6,7 +6,7 @@ First of all copy `config.js.dist` to `config.js` file
 
 To set up this application you should go to [MongoLab](https://mlab.com/) sign up a new account
 and create a new free tier database with the name `scrum`. Then go to [Account users page](https://mlab.com/account-details/) choose your user
-copy API key and paste it into `server/config.js` file `apiKey` value.
+copy API key and paste it into `server/config.js` file `apiKey` value. Also don't forget to enable Data API Access at the bottom of [Account users page](https://mlab.com/account-details/)
 
 Now you should run following command (assuming you have installed node.js on your machine, if not then plese visit [node.js official website](https://nodejs.org/en/)
 and install the latest node version):
