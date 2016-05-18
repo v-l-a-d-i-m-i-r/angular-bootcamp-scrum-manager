@@ -35,6 +35,10 @@ MongoDBStrategy.name = "mongo";
 MongoDBStrategy.prototype.query = function(query, done) {
   query.apiKey = this.apiKey;     // Add the apiKey to the passed in query
   request.get(this.baseUrl, { qs: query, json: {} }, function(err, response, body) {
+    if (body.message) {
+      console.log('Quering users (passport): ' + body.message);
+      body = null;
+    }
     done(err, body);
   });
 };
@@ -43,6 +47,10 @@ MongoDBStrategy.prototype.query = function(query, done) {
 MongoDBStrategy.prototype.get = function(id, done) {
   var query = { apiKey: this.apiKey };
   request.get(this.baseUrl + id, { qs: query, json: {} }, function(err, response, body) {
+    if (body.message) {
+      console.log('Getting user "' + id + '" (passport): ' + body.message);
+      body = null;
+    }
     done(err, body);
   });
 };
