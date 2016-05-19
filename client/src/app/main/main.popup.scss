@@ -1,0 +1,17 @@
+.MainPopup {
+  width: 500px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50px;
+  padding: 10px;
+
+  border: 2px solid #00A000;
+  background-color: #DDFFDD;
+
+  &__header {
+    font-style: italic;
+  }
+}

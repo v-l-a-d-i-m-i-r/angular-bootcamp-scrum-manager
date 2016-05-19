@@ -6,9 +6,12 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig) {
+  function config($logProvider, toastrConfig, $urlRouterProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
+    
+    // Redirect to the root if matched state not found
+    $urlRouterProvider.otherwise('/');
 
     // Set options third-party lib
     toastrConfig.allowHtml = true;
