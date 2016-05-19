@@ -86,3 +86,21 @@ Is proxied to
 `PUT https://api.mongolab.com/api/1/databases/scrum/collections/projects/572fccb1f8c2e76df19c652e {"name": "Real Project"}` 
 
 Please read more details regarding [MongoLab Data API](http://docs.mlab.com/data-api/) here. In fact this is classic RESTful API.
+
+To check that backend server works you should go to http://localhost:8000/api/health-check
+I should return following response:
+
+```
+)]}',
+{
+  "status": true
+}
+```
+
+## Frontend setting up
+
+All you need to do to set up the front end application is:
+
+1. `cd ./client`
+2. `npm install && bower install`
+3. `gulp serve`
