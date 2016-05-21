@@ -15,3 +15,29 @@
     font-style: italic;
   }
 }
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  padding: 10px;
+  height: 100vh;
+  border-right: 1px #000000 solid;
+  background-color: darkseagreen;
+  transition: 2s;
+
+  &.ng-hide-add {
+    left: 0;
+  }
+  &.ng-hide-add-active {
+    left: -220px;
+  }
+
+  &.ng-hide-remove {
+    left: -220px;
+  }
+  &.ng-hide-remove-active {
+    left: 0px;
+  }
+}

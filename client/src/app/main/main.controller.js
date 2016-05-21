@@ -11,7 +11,15 @@
 
     vm.title = 'Main Controller...!';
     vm.showPopup = showPopup;
+    vm.log = $log.log;
     
+    vm.persons = [
+      {name: 'Vova0', age: '10'},
+      {name: 'Petya0', age: '12'},
+      {name: 'Vova1', age: '11'},
+      {name: 'Petya1', age: '15'}
+    ];
+
     activate();
 
     ///////////////

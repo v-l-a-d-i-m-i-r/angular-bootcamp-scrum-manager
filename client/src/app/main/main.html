@@ -1,4 +1,23 @@
-<div class="container">
+<div class="container" bc-test="">
   {{ main.title }}
-  <button ng-click="main.showPopup()">Open Popup</button>
+
+  <button class="btn btn-default" ng-click="main.showPopup()">Open Popup</button>
+  <button class="btn btn-primary" ng-click="main.showSidebar = true">Show Sidebar</button>
+
+  <div class="sidebar"
+       ng-show="main.showSidebar"
+       bc-click-outside="main.showSidebar = false"
+  >
+    <button class="btn btn-danger">
+      I do NOT close sidebar
+    </button>
+  </div>
+
+  <bc-persons items="main.persons">
+    <div>
+      <h2>{{ main.title }}</h2>
+      <h3>Name: {{ item.name }}</h3>
+      <h6>Age: {{ item.age }}</h6>
+    </div>
+  </bc-persons>
 </div>
