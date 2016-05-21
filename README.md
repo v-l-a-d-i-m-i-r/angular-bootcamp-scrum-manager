@@ -26,6 +26,7 @@ and install the latest node version):
 1. `POST /api/signin { "email": "admin@admin.com", "password": "password" }` - Sign-in new user
 2. `POST /api/signout {}` - Sign-out current user (if you've successfully signed in before)
 3. `POST /api/signup { "email": "admin@admin.com", "password": "password", "firstName": "Admin", "lastName": "System" }` - Sign up new user
+4. `GET /api/current-user` - get currently signed in user from server session
 
 ## RESTful API (proxying MongoLab database)
 
