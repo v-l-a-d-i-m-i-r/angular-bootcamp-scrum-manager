@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -16,6 +16,8 @@
       'bcPopup',
       'bcGithub',
       'bcClickOutside',
+      'bcUser',
+      'bcForm',
       'bcPersons',
 
       'scrumManager.main'

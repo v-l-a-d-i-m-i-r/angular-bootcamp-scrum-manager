@@ -4,10 +4,7 @@
   <button class="btn btn-default" ng-click="main.showPopup()">Open Popup</button>
   <button class="btn btn-primary" ng-click="main.showSidebar = true">Show Sidebar</button>
 
-  <div class="sidebar"
-       ng-show="main.showSidebar"
-       bc-click-outside="main.showSidebar = false"
-  >
+  <div class="sidebar" ng-show="main.showSidebar" bc-click-outside="main.showSidebar = false">
     <button class="btn btn-danger">
       I do NOT close sidebar
     </button>
@@ -20,4 +17,27 @@
       <h6>Age: {{ item.age }}</h6>
     </div>
   </bc-persons>
+
+  <div ng-controller="UserController as user">
+    {{user.user | json}}
+    <form name="registerForm" ng-submit="submit()">
+      <div class="form-group" unique-id validate-messages-form="registerForm" validate-messages-input="email">
+        <label for="{{id}}">Email address</label>
+        <input type="email" name="email" id="{{id}}" ng-model="user.user.email" class="form-control" required>
+      </div>
+      <div class="form-group" unique-id validate-messages-form="registerForm" validate-messages-input="password">
+        <label for="{{id}}">Password (Only US chars and numbers, 6-16 chars)</label>
+        <input type="password" name="password" id="{{id}}" ng-model="user.user.password" class="form-control" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]+$/" required>
+      </div>
+      <div class="form-group" unique-id validate-messages-form="registerForm" validate-messages-input="confirmPassword">
+        <label for="{{id}}">Repeat password</label>
+        <input type="password" name="confirmPassword" class="form-control" ng-model="user.user.passwordConfirm" ng-minlength="6" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]+$/" compare-to="user.user.password" required>
+      </div>
+      <div class="form-group" unique-id>
+        <label for="{{id}}">Is admin</label>
+        <input type="checkbox" id="{{id}}" ng-model="user.user.admin">
+      </div>
+      <button type="submit" class="btn btn-primary" disable-button>Register</button>
+    </form>
+  </div>
 </div>
